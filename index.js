@@ -5,6 +5,10 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send('Please do go on the "/identify" route and use Post method to check the tests. Thank you!');
+});
+
 app.post("/identify", async (req, res) => {
   const { email, phoneNumber } = req.body;
   if (!email && !phoneNumber) {
